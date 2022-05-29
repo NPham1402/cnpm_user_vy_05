@@ -1,0 +1,15 @@
+.input-infor{
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid gainsboro;
+    padding: 10px;
+} 
+.contact-infor{
+    font-weight: bold;
+    font-size: 18px;
+}
+.title-booking{
+    font-weight: bold;
+    padding-bottom: 10px;
+    font-size: 20px;
+}

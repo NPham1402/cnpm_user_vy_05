@@ -1,0 +1,27 @@
+.title-receipt{
+    font-weight: bold;
+    padding-bottom: 10px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.receipt{
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid gainsboro;
+    padding: 10px;
+    width: 100%;
+}
+.namePro{
+    font-weight: bold;
+    padding: 0px 10px;
+    font-size: 20px;
+}
+.nameLegal{
+    padding: 0px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: grey;
+}
+.date-booking{
+    background-color: ghostwhite;
+}

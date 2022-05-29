@@ -1,0 +1,24 @@
+.list {
+    display: flex;
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.listContainer {
+    flex: 6;
+    flex-direction: column;
+    margin-right: 15px;
+}
+.title-book-a{
+    padding-left: 15%;
+    padding-top: 5%;
+    font-weight: bold;
+    font-size: 35px;
+}
+.title-book-b{
+    padding-left: 15%;
+    padding-bottom: 1%;
+    font-size: 20px;
+    font-weight: bold;
+    color: gray;
+}

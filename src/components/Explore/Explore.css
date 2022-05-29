@@ -1,0 +1,15 @@
+.title-explore {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 30px;
+}
+div#accordionExample {
+    text-align: center;
+}
+.accordion-button{
+    font-weight: lighter;
+    color: black;
+}
+.accordion-body{
+    text-align: left;
+}

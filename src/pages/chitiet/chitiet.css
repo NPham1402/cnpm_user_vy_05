@@ -1,0 +1,56 @@
+.boxLeft{
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid gainsboro;
+    padding: 25px;
+    max-width: 950px;
+}
+.homeImg{
+    border-radius: 10px;
+    align-items: center;
+}
+.textTitle{
+    font-weight: bold;
+    color: black;
+    font-size: 24px;
+}
+.textContent{
+    font-size: 16px;
+    color: rgb(104, 113, 118);
+    font-weight: bold;
+}
+.infoUser{
+    font-size: 20px;
+}
+.boxRight{
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid gainsboro;
+    padding: 25px;
+    width: 380px;
+}
+.boxSelect{
+    background-color: white;
+    border: 1px solid gainsboro;
+    border-radius: 8px;
+    margin: auto;
+    padding: 20px;
+}
+.textTitle_sm{
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+}
+.pri_right{
+    text-align: right;
+    margin-right: auto;
+    padding: 5px;
+}
+.gr_text{
+    color: greenyellow;
+    -webkit-text-stroke: 0.3px black;
+}
+.pad_left{
+    padding-left: 30px;
+    padding-bottom: 25px;
+}

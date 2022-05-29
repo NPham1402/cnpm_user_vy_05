@@ -1,0 +1,29 @@
+.price{
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+}
+.title-price{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.priceNum{
+    font-size: 20px;
+    margin-bottom: 5px;
+    text-align: end;
+}
+.priceBtn{
+    background-color: rgb(255, 94, 31);
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: inherit;
+    margin-bottom: 150px;
+}
+.priceBtn:hover{
+    background-color: brown;
+    color: white;
+}

@@ -1,0 +1,73 @@
+.footer-homepage-customer{
+    width: 100%;
+    height: 1100px;
+    bottom: 0;
+    background-color: #1b1b1b;
+    display: flex;
+    justify-content: center;
+}
+.container-customize-footer{
+    width: 70%;
+    height: 100%;
+    padding-top: 50px;
+    position: absolute;
+}
+.col-lg-5-customize-footer{
+    width: 35%;
+    height: 100%;
+    float: left;
+}
+.col-lg-2-customize-footer{
+    width: 20%;
+    height: 100%;
+    color: white;
+    float: left;
+}
+.col-lg-3-customize-footer{
+    width: 25%;
+    height: 100%;
+    float: left;
+    color:white;
+    font-size: 18px;
+    margin-top: 50px;
+    padding-left: 50px;
+}
+.cover-iee{
+    margin-left: 10%;
+    width: 80%;
+}
+.big-img-footer{
+    margin-left: 10%;
+}
+.button-partner{
+    width: 67%;
+    height: 15%;
+    margin-left: 10%;
+    border: 5px solid white;
+    border-radius: 4%;
+    background-color: #1b1b1b;
+    margin-top: 5%;
+}
+hr.drawing-line{
+    border-top:2px solid white;
+    position: absolute;
+    width: 100%;
+    margin-top: 950px;
+}
+div.company-name-line{
+    position: absolute;
+    text-align: center;
+    margin-top: 1000px;
+    width: 60%;
+}
+.about-traveloka{
+    margin-top: 50px;
+    font-size: 18px;
+}
+.about-us{
+    margin-top: 80px;
+    font-size: 18px;
+}
+.margin-top-some{
+    margin-top: 50px;
+}

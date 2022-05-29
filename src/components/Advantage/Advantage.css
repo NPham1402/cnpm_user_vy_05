@@ -1,0 +1,19 @@
+.title-advantage {
+    text-align: center;
+    padding: 30px;
+}
+.name-advantage {
+    text-align: center;
+    padding: 10px;
+    padding-top: 30px;
+}
+.des-advantage {
+    text-align: center;
+    padding-bottom: 30px;
+}
+.img-advantage {
+    height: 120px;
+    max-height: 137px;
+    max-width: 100%;
+    vertical-align: middle;
+}
