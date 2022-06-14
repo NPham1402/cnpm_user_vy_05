@@ -31,7 +31,6 @@ const [openDate, setOpenDate] = useState(false);
         setdata(e.data)
       })
       .then(function (error) {
-        console.log(error);
       });
   }, [data2]);
   return (

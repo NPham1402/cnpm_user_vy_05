@@ -17,7 +17,7 @@ function Detail(props) {
         setdata(e.data);
       })
       .then(function (error) {
-        console.log(error);
+       
       });
   }, []);
 

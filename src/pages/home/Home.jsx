@@ -2,7 +2,6 @@ import Featured from "../../components/featured/Featured";
 import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import Footer from "../../components/footer/FooterCustomer";
 import Header from "../../components/header/Header";
-import MailList from "../../components/mailList/MailList";
 import Navbar from "../../components/navbar/Navbar";
 import PropertyList from "../../components/propertyList/PropertyList";
 import "./home.css";
@@ -13,11 +12,11 @@ import Advantage from "../../components/Advantage/Advantage";
 import Explore from "../../components/Explore/Explore";
 import { useCookies } from 'react-cookie';
 const Home = () => {
- const [getCookies,setCookies]=useCookies();
+ const [getCookies]=useCookies();
   return (
     <div>
       <Navbar/>
-      <Header type="lists"token={getCookies.Customer}/>
+      <Header type="lists" token={getCookies.Customer}/>
       <div className="homeContainer">
         <Featured/>
         <h1 className="homeTitle ">Duyệt theo loại thuộc tính</h1>

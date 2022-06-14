@@ -10,9 +10,10 @@ import Stripaddcard from '../../components/Stripe/Stripaddcard';
 
 export default function Hoa_don() {
    const location = useLocation();
+   console.log(location.state.idpar)
    const [infor, setinfor] = useState("");
       const [price,setprice]=useState(location.state.data.PRICE_PHONG)
-    const [valuevoucher,setvaluevoucher]=useState({vouchers:0,giftvoucher:0})
+    const [valuevoucher,setvaluevoucher]=useState({vouchers:0,giftvoucher:0,idvoucher:"",idgiff:"",})
   return (
     <div>    
       <Navbar />
@@ -43,7 +44,7 @@ export default function Hoa_don() {
                 </div>
                 <div class="modal-footer">
                     
-                   <Stripaddcard price={price}  valuevoucher={valuevoucher}  date={location.state.date} data={location.state.data} option={location.state.option} />
+                   <Stripaddcard price={price} idpar={location.state.idpar}  valuevoucher={valuevoucher}  date={location.state.date} data={location.state.data} option={location.state.option} />
                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
                 </div>
                 </div>

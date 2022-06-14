@@ -1,18 +1,14 @@
 import StripeCheckout from 'react-stripe-checkout';
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-
 function Stripaddcard(props) {
   const navigate=useNavigate()
+  const [getCookies]=useCookies();
 const date = new Date();
   const publishableKey =
     'pk_test_51KysBGC4c4me30BTdO6jARHtsFThCnAVcsxOeu9tumGlrOHf1XstZNJaV4UWPLNxIIx4fB4W3Pb6d1kgsszy8FBw0001H8C0ok';
-  const [product, setProduct] = useState({
-    name: 'Headphone',
-    price: 5,
-  });
 const formatData = (input) => {
   if (input > 9) {
     return input;
@@ -59,18 +55,24 @@ console.log(format24Hour(format))
   const payNow = async token => {
    console.log(token)
     try {
+      console.log(props.idpar)
       const response = await axios({
         url: 'http://localhost:3001/payment',
         method: 'post',
         data: {
-          amount:((props.price-props.valuevoucher.vouchers-props.valuevoucher.giftvoucher)/23000).toFixed(0),
+          amount:((props.price-props.valuevoucher.vouchers-props.valuevoucher.giftvoucher)/230).toFixed(0),
           token,
+          token_cus:getCookies.Customer,
+          idpar:props.idpar,
           roomid:props.data.ID_ROOMTYPE,
           datetime:format24Hour(format),
     ngaynhan:day(format2),
     ngaytra:day(format3),
     totalprice:props.price,
+    iduser:getCookies.id,
     lastprice:props.price-props.valuevoucher.vouchers-props.valuevoucher.giftvoucher,
+    idvoucher:props.valuevoucher.idvoucher,
+    idgiff:props.valuevoucher.idgiff
         },
       });
       if (response.status === 200) {
@@ -82,7 +84,9 @@ console.log(format24Hour(format))
   };
 
   return (
+    
     <div className="container">
+    
         <div className="row">
         <div className='row'>
                                     <div className='col-5 title-price'>Tổng tiền:</div>
@@ -107,7 +111,7 @@ console.log(format24Hour(format))
         label="Pay Now"
         name="Pay With Credit Card"
         email='0938224718nguyen@gmail.com'
-        amount={((props.price-props.valuevoucher.vouchers-props.valuevoucher.giftvoucher)/23000).toFixed(2)}
+        amount={((props.price-props.valuevoucher.vouchers-props.valuevoucher.giftvoucher)/230).toFixed(2)}
         description={`Your total is $${((props.price-props.valuevoucher.vouchers-props.valuevoucher.giftvoucher)/23000).toFixed(2)}`}
         token={payNow}
       />

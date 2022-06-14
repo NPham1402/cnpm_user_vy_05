@@ -2,7 +2,7 @@ import "./searchItem.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 const SearchItem = (props) => {
-  console.log(props.data.oldprice)
+  console.log(props.data.PARTNER_ID)
    const navigate = useNavigate();
    const [datachange,setdata]=useState({
      data:props.data,
@@ -39,7 +39,7 @@ const SearchItem = (props) => {
           <button>⭐</button>
         </div>
         <div className="siDetailTexts">
-          <span className="siPrice">{props.data.oldprice} VNĐ</span>
+          <span className="siPrice">{props.data.PRICE_PHONG.toLocaleString()} VNĐ</span>
           <span className="siTaxOp">Bao gồm thuế và phí</span>
           <button className="siCheckButton" onClick={handleSearch}>Xem tình trạng</button>
         </div>

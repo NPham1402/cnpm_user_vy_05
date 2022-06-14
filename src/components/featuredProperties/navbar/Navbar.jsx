@@ -5,42 +5,20 @@ import {useNavigate} from "react-router-dom"
 import { useCookies } from 'react-cookie';
 // import axios from 'axios'
 const Navbar = () => {
-  const [getCookies,setCookies,removecooki]=useCookies();
+  const [getCookies,removecooki]=useCookies();
   const navigate=useNavigate();
   const [data,setdata]=useState({hoadon:[],solan:0});
   const [Package,setPackage]=useState([]);
-  const format24Hour = ({ dd, mm, yyyy, HH, MM, SS }) => {
-  return`${yyyy}/${mm}/${dd} ${HH}:${MM}:${SS}`;
-};
-const day = ({ dd, mm, yyyy }) => {
-  return`${yyyy}/${mm}/${dd}`;
-};
-const formatData = (input) => {
-  if (input > 9) {
-    return input;
-  } else return `0${input}`;
-};
-  
-// Function to convert
-// 24 Hour to 12 Hour clock
-const formatHour = (input) => {
-  if (input > 12) {
-    return input - 12;
-  }
-  return input;
-};
-  
    useEffect((e) => {
 axios.post("https:////gxyvy04g01backend-production.up.railway.app/Customer/getCustomerInfo", {
 
                 TOKEN: getCookies.Customer,
 
             }).then(res => {
-              setCookies("id",res.data.PACKAGE.CUSTOMER_ID)
                 setPackage(res.data.PACKAGE);
             })
     axios
-      .get("http://localhost:3001/hoadon",{headers:{id:getCookies.id}})
+      .get("http://localhost:3001/hoadon")
       .then((e) => {
          
            if(data.hoadon.length===0&& data.solan<2)
@@ -103,48 +81,17 @@ axios.post("https:////gxyvy04g01backend-production.up.railway.app/Customer/getCu
               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body text">
-              <div class="list-group">
-                      {data.hoadon.map((e) => (
-         <div className=" list-group-item list-group-item-action row item">
+              <div class="list-group list-bill">
+                {data.hoadon.map((e) => (
+                <div className=" list-group-item list-group-item-action row item">
                   <div class="col-6-sm text-title bg_text">HÓA ĐƠN</div>
                   <div className="row">
-                      <p className="col-4" >ID:</p>
-                    <a  className="col-8 codeBook"style={{ "text-overflow": "ellipsis","overflow": "hidden","white-space": "nowrap"}}>{e.ID_HOA_DON}</a>
-                      <p className="col-4" >Tiền:</p>
-                    <h4 className="col-6" >{e.FINAL_PRICE} Đ</h4>
-           <p className="col-4" >Thanh toán:</p>
-                    <p className="col-8" >{
-                    format24Hour( {
-  dd: formatData(new Date(e.PAY_TIME).getDate()),
-  mm: formatData(new Date(e.PAY_TIME).getMonth() + 1),
-  yyyy: new Date(e.PAY_TIME).getFullYear(),
-  HH: formatData(new Date(e.PAY_TIME).getHours()),
-  hh: formatData(formatHour(new Date(e.PAY_TIME).getHours())),
-  MM: formatData(new Date(e.PAY_TIME).getMinutes()),
-  SS: formatData(new Date(e.PAY_TIME).getSeconds()),
-})}</p>
-      <p className="col-4" >ngày đặt:</p>
-                    <p className="col-8" >{
-                      day( {
-                      dd: formatData(new Date(e.NGAY_NHAN_PHONG).getDate()),
-                      mm: formatData(new Date(e.NGAY_NHAN_PHONG).getMonth() + 1),
-                      yyyy: new Date(e.NGAY_NHAN_PHONG).getFullYear(),
-                    })
-                    }</p>
-                    <p className="col-4" >ngày trả:</p>
-                    <p className="col-8" >{
-                      day( {
-                      dd: formatData(new Date(e.NGAY_TRA_PHONG).getDate()),
-                      mm: formatData(new Date(e.NGAY_TRA_PHONG).getMonth() + 1),
-                      yyyy: new Date(e.NGAY_TRA_PHONG).getFullYear(),
-                    })
-                    }</p>
+                    <a  className="col-6 codeBook"style={{ "text-overflow": "ellipsis","overflow": "hidden","white-space": "nowrap"}}>{e.ID_HOA_DON}</a>
+                    <label className="col-6" >{e.TOTAL_PRICE}  VND</label>
                     <button class="btn btn-secondary btn-sm center" onClick={c=>{refund(e.ID_HOA_DON,e.ID_ROOMTYPE)}} >Refund</button>
                   </div>
                 </div>
-         
-        ))}
-               
+                ))}
               </div>
             </div>
           </div>

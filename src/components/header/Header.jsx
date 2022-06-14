@@ -1,10 +1,7 @@
 import {
   faBed,
   faCalendarDays,
-  faCar,
   faPerson,
-  faPlane,
-  faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
@@ -16,10 +13,9 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { da } from "date-fns/locale";
 import Banner from "../../components/Banner/Banner"
 
-const Header = ({ type }) => {
+const Header = ({ type, token }) => {
   const [destination, setDestination] = useState([]);
   const [data2, setdata2] = useState([]);
   const [data, setdata] = useState([]);
@@ -31,6 +27,7 @@ const Header = ({ type }) => {
       key: "selection",
     },
   ]);
+
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
@@ -41,7 +38,8 @@ const Header = ({ type }) => {
     setDestination(childdata)
     console.log(childdata);
   };
- useEffect(() => {
+  useEffect(() => {
+     
     axios
       .get("http://localhost:3001/search")
       .then((e) => {
@@ -74,7 +72,7 @@ const Header = ({ type }) => {
         }
       >
         {type==="lus"&&(
-          <img className="img_bn" src="https://ik.imagekit.io/tvlk/image/imageResource/2021/12/01/1638341259494-3263fde6dff52fa9f4189d05b4c9daeb.jpeg?tr=q-75" />
+          <img className="img_bn" alt="" src="https://ik.imagekit.io/tvlk/image/imageResource/2021/12/01/1638341259494-3263fde6dff52fa9f4189d05b4c9daeb.jpeg?tr=q-75" />
         )
         }
         

@@ -63,6 +63,7 @@ useEffect(()=>{
    axios
       .get("http://localhost:3001/roomtypes", { headers })
       .then((e) => {
+        console.log(e.data)
         setroom(e.data)
       })
       .then(function (error) {
@@ -148,8 +149,6 @@ useEffect(()=>{
               </span>
               <h2>
                         <div className="d-flex flex-row align-items-center">
-          <h4 className="mr-1">{data.oldprice} VNĐ</h4>
-          <h4 className="strike-text">{data.finalprice} VNĐ</h4>
         </div><br/> ({substractdate(date[0].endDate,date[0].startDate)} đêm)
               </h2>
             </div>
@@ -158,6 +157,7 @@ useEffect(()=>{
           <Card
             data={e}
             date={date}
+            idpar={data.PARTNER_ID}
             option={options}
           />
         ))}
